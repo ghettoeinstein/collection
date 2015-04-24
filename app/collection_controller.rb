@@ -68,9 +68,11 @@ class CollectionViewController < UICollectionViewController
   def viewDidLoad
     super
   
-  
-    self.collectionView.registerClass(UICollectionViewCell, forCellWithReuseIdentifier:CELL_IDENTIFIER)
+    # Original from The Core iOS Developer's Cookbook
+    #self.collectionView.registerClass(UICollectionViewCell, forCellWithReuseIdentifier:CELL_IDENTIFIER)
 
+    # Use custom ImageCell class from models directory.
+    self.collectionView.registerClass(ImageCell, forCellWithReuseIdentifier:CELL_IDENTIFIER)
     self.collectionView.registerClass(UICollectionReusableView, forSupplementaryViewOfKind:UICollectionElementKindSectionHeader, withReuseIdentifier:CELL_HEADER)
     self.collectionView.registerClass(UICollectionReusableView, forSupplementaryViewOfKind:UICollectionElementKindSectionFooter, withReuseIdentifier:CELL_FOOTER)
     
